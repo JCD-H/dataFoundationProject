@@ -1,0 +1,6 @@
+set up config
+set up env
+set up parallelism
+set up data stream
+transformed stream
+print tranformed stream
