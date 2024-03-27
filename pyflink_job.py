@@ -7,12 +7,13 @@ def simple_flink_job():
     config = Configuration()
     config.set_string("jobmanager.rpc.address", "localhost")
     config.set_string("jobmanager.rpc.port", "6123")
-    config.set_string("python.executable", "/usr/bin/python3")  # Adjust the path as needed
+    # config.set_string("python.executable", "/usr/bin/python3")  # Adjust the path as needed
     print('set up config')
 
     # Create a StreamExecutionEnvironment with the configuration
     env = StreamExecutionEnvironment.get_execution_environment(config)
     print('set up env')
+    
 
     # Set parallelism to 1 for easy viewing
     env.set_parallelism(1)
@@ -35,6 +36,8 @@ def simple_flink_job():
 
     # Execute the Flink job
     env.execute("Simple Flink Job")
+
+    print('done executing')
 
 if __name__ == "__main__":
     simple_flink_job()
